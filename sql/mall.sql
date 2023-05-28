@@ -53,7 +53,7 @@ CREATE TABLE `product` (
     `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     PRIMARY KEY (`id`),
-    KEY `ix_cateid` (`cateid`),
+    KEY `ix_cateid` (`cate_id`),
     KEY `ix_update_time` (`update_time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='商品表';
 
@@ -84,15 +84,15 @@ USE cart;
 
 CREATE TABLE `cart` (
     `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '购物车id',
-    `userid` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '用户id',
+    `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '用户id',
     `product_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '商品id',
     `quantity` int(11) NOT NULL DEFAULT 0 COMMENT '数量',
     `checked` int(11) NOT NULL DEFAULT 0 COMMENT '是否选择,1=已勾选,0=未勾选',
     `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     PRIMARY KEY (`id`),
-    KEY `ix_userid` (`userid`),
-    KEY `ix_proid` (`proid`)
+    KEY `ix_user_id` (`user_id`),
+    KEY `ix_proid` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='购物车表';
 
 
@@ -102,7 +102,7 @@ USE orders;
 
 CREATE TABLE `orders` (
     `id` varchar(64) NOT NULL DEFAULT '' COMMENT '订单id',
-    `userid` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '用户id',
+    `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '用户id',
     `shopping_id` bigint(20) NOT NULL DEFAULT 0 COMMENT '收货信息表id',
     `payment` decimal(20,2) DEFAULT NULL DEFAULT 0 COMMENT '实际付款金额,单位是元,保留两位小数',
     `payment_type` tinyint(4) NOT NULL DEFAULT 1 COMMENT '支付类型,1-在线支付',
@@ -111,7 +111,7 @@ CREATE TABLE `orders` (
     `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     PRIMARY KEY (`id`),
-    KEY `ix_userid` (`userid`)
+    KEY `ix_userid` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='订单表';
 
 CREATE TABLE `order_item` (
@@ -135,7 +135,7 @@ CREATE TABLE `order_item` (
 CREATE TABLE `shipping` (
     `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '收货信息表id',
     `order_id` varchar(64) NOT NULL DEFAULT '' COMMENT '订单id',
-    `userid` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '用户id',
+    `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '用户id',
     `receiver_name` varchar(20) NOT NULL DEFAULT '' COMMENT '收货姓名',
     `receiver_phone` varchar(20) NOT NULL DEFAULT '' COMMENT '收货固定电话',
     `receiver_mobile` varchar(20) NOT NULL DEFAULT '' COMMENT '收货移动电话',
@@ -146,8 +146,8 @@ CREATE TABLE `shipping` (
     `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     PRIMARY KEY (`id`),
-    KEY `ix_orderid` (`orderid`),
-    KEY `ix_userid` (`userid`)
+    KEY `ix_orderid` (`order_id`),
+    KEY `ix_userid` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='收货信息表';
 
 
@@ -158,15 +158,15 @@ USE pay;
 CREATE TABLE `pay_info` (
     `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '支付信息表id',
     `order_id` varchar(64) NOT NULL DEFAULT '' COMMENT '订单id',
-    `userid` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '用户id',
+    `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '用户id',
     `pay_platform` tinyint(4) NOT NULL DEFAULT 0 COMMENT '支付平台:1-支付宝,2-微信',
     `platform_number` varchar(200) NOT NULL DEFAULT '' COMMENT '支付流水号',
     `platform_status` varchar(20) NOT NULL DEFAULT '' COMMENT '支付状态',
     `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     PRIMARY KEY (`id`),
-    KEY `ix_orderid` (`orderid`),
-    KEY `ix_userid` (`userid`)
+    KEY `ix_orderid` (`order_id`),
+    KEY `ix_userid` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='支付信息表';
 
 
@@ -178,13 +178,13 @@ CREATE TABLE `reply`(
     `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '评论表id',
     `business` varchar(64) NOT NULL DEFAULT '' COMMENT '评论业务类型',
     `target_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '评论目标id',
-    `reply_userid` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '回复用户id',
-    `be_reply_userid` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '被回复用户id',
+    `reply_user_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '回复用户id',
+    `be_reply_user_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '被回复用户id',
     `parent_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '父评论id',
     `content` varchar(255) NOT NULL DEFAULT '' COMMENT '评论内容',
     `image` varchar(255) NOT NULL DEFAULT '' COMMENT '评论图片',
     `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     PRIMARY KEY (`id`),
-    KEY `ix_targetid` (`targetid`)
+    KEY `ix_targetid` (`target_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='评论列表';

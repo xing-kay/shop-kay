@@ -1,3 +1,6 @@
+.DS_Store
+.vs_code
+.idea/
 /.idea/.gitignore
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/lebron.iml
@@ -6,5 +9,4 @@
 .idea/watcherTasks.xml
 .idea/codeStyles/codeStyleConfig.xml
 .idea/misc.xml
-./tmp
-/tmp
+tmp

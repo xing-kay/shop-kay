@@ -13,7 +13,9 @@ services:
       # 时区上海 - Time zone Shanghai (Change if needed)
       TZ: Asia/Shanghai
       # root 密码 - root password
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: kay
+      MYSQL_PASSWORD: kay123
+      MYSQL_ROOT_PASSWORD: kay123
     ports:
       - 3306:3306
     volumes:
