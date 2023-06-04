@@ -11,7 +11,6 @@ import (
 	"shop-kay/apps/product/rpc/product"
 
 	"github.com/zeromicro/go-zero/core/logx"
-	"github.com/zeromicro/go-zero/core/mr"
 	"github.com/zeromicro/go-zero/core/threading"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -128,30 +127,31 @@ func (l *ProductListLogic) ProductList(in *product.ProductListRequest) (*product
 }
 
 func (l *ProductListLogic) productsByIds(ctx context.Context, pids []int64) ([]*model.Product, error) {
-	products, err := mr.MapReduce(func(source chan<- interface{}) {
-		for _, pid := range pids {
-			source <- pid
-		}
-	}, func(item interface{}, writer mr.Writer, cancel func(error)) {
-		pid := item.(int64)
-		p, err := l.svcCtx.ProductModel.FindOne(ctx, pid)
-		if err != nil {
-			cancel(err)
-			return
-		}
-		writer.Write(p)
-	}, func(pipe <-chan interface{}, writer mr.Writer, cancel func(error)) {
-		var ps []*model.Product
-		for item := range pipe {
-			p := item.(*model.Product)
-			ps = append(ps, p)
-		}
-		writer.Write(ps)
-	})
-	if err != nil {
-		return nil, err
-	}
-	return products.([]*model.Product), nil
+	return nil, nil
+	//products, err := mr.MapReduce(func(source chan<- interface{}) {
+	//	for _, pid := range pids {
+	//		source <- pid
+	//	}
+	//}, func(item interface{}, writer mr.Writer, cancel func(error)) {
+	//	pid := item.(int64)
+	//	p, err := l.svcCtx.ProductModel.FindOne(ctx, pid)
+	//	if err != nil {
+	//		cancel(err)
+	//		return
+	//	}
+	//	writer.Write(p)
+	//}, func(pipe <-chan interface{}, writer mr.Writer, cancel func(error)) {
+	//	var ps []*model.Product
+	//	for item := range pipe {
+	//		p := item.(*model.Product)
+	//		ps = append(ps, p)
+	//	}
+	//	writer.Write(ps)
+	//})
+	//if err != nil {
+	//	return nil, err
+	//}
+	//return products.([]*model.Product), nil
 }
 
 func (l *ProductListLogic) cacheProductList(ctx context.Context, cid int32, cursor, ps int64) ([]int64, error) {

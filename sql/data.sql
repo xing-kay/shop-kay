@@ -1,6 +1,6 @@
 USE product;
 
-INSERT INTO category (id, parent_id, name, status)
+INSERT INTO category (id, parentid, name, status)
 VALUES (1, 0, '男装', 1),
 (2, 1, '夹克', 1),
 (3, 1, '中山装', 1),
@@ -12,7 +12,7 @@ VALUES (1, 0, '男装', 1),
 
 
 
-INSERT INTO product (id, cate_id, name, subtitle, images, detail, price, stock, status, create_time, update_time)
+INSERT INTO product (id, cateid, name, subtitle, images, detail, price, stock, status, create_time, update_time)
 VALUES (1, 2, '夹克1', '夹克1', '1.jpg,2.jpg,3.jpg', '详情', 100, 10, 1, '2022-06-18 00:18:00', '2022-06-18 00:18:00'),
 (2, 2, '夹克2', '夹克2', '1.jpg,2.jpg,3.jpg', '详情', 100, 10, 1, '2022-06-18 00:18:01', '2022-06-18 00:18:01'),
 (3, 2, '夹克3', '夹克3', '1.jpg,2.jpg,3.jpg', '详情', 100, 10, 1, '2022-06-18 00:18:02', '2022-06-18 00:18:02'),

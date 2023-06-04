@@ -4,7 +4,6 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/zeromicro/go-zero/core/logx"
 	"shop-kay/apps/product/rpc/internal/config"
 	"shop-kay/apps/product/rpc/internal/server"
 	"shop-kay/apps/product/rpc/internal/svc"
@@ -17,19 +16,18 @@ import (
 	"google.golang.org/grpc/reflection"
 )
 
-var configFile = flag.String("f", "etc/product.yaml", "the etc file")
+var configFile = flag.String("f", "etc/product.yaml", "the config file")
 
 func main() {
 	flag.Parse()
-	//close statis log
-	logx.DisableStat()
+
 	var c config.Config
 	conf.MustLoad(*configFile, &c)
 	ctx := svc.NewServiceContext(c)
-	svr := server.NewProductServer(ctx)
 
 	s := zrpc.MustNewServer(c.RpcServerConf, func(grpcServer *grpc.Server) {
-		product.RegisterProductServer(grpcServer, svr)
+		product.RegisterProductServer(grpcServer, server.NewProductServer(ctx))
+
 		if c.Mode == service.DevMode || c.Mode == service.TestMode {
 			reflection.Register(grpcServer)
 		}

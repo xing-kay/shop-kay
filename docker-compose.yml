@@ -1,4 +1,4 @@
-version: '3.5'
+version: '3'
 # 网络配置
 networks:
   backend:
@@ -6,33 +6,15 @@ networks:
 
 # 服务容器配置
 services:
-  mysql:
-    image: mysql/mysql-server:8.0.28
-    container_name: mysql
-    environment:
-      # 时区上海 - Time zone Shanghai (Change if needed)
-      TZ: Asia/Shanghai
-      # root 密码 - root password
-      MYSQL_USER: kay
-      MYSQL_PASSWORD: kay123
-      MYSQL_ROOT_PASSWORD: kay123
+  db:
+    image: "mariadb:10.5.3"
     ports:
-      - 3306:3306
+      - "3306:3306"
     volumes:
-      # 数据挂载 - Data mounting
-      - ./tmp/mysql:/var/lib/mysql
-      # 日志
-    command:
-      # 将mysql8.0默认密码策略 修改为 原先 策略 (mysql8.0对其默认策略做了更改 会导致密码无法匹配)
-      # Modify the Mysql 8.0 default password strategy to the original strategy (MySQL8.0 to change its default strategy will cause the password to be unable to match)
-      --default-authentication-plugin=mysql_native_password
-      --character-set-server=utf8mb4
-      --collation-server=utf8mb4_general_ci
-      --explicit_defaults_for_timestamp=true
-      --lower_case_table_names=1
-    privileged: true
-    networks:
-      - backend
+      - ./tmp/data:/var/lib/mysql
+      - ./tmp/initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
 
   redis:
     image: redis:5.0.5
@@ -44,8 +26,8 @@ services:
       - ./tmp/redis:/data                 # 引用 .env 配置中 DATA_PATH_HOST 变量，将宿主机上存放 Redis 数据的目录挂载到容器中 /data 目录
     ports:
       - "6379:6379"                          # 设置容器6379端口映射指定宿主机端口
-    networks:
-      - backend
+      #networks:
+      #- backend
 
   #rabbitmq:
   #  image: rabbitmq:3.7.15-management
@@ -63,7 +45,7 @@ services:
     image: bitnami/etcd:latest
     privileged: true
     volumes:
-      - ./tmp/etcd:/bitnami/etcd # 注意这个目录容器要可写，不然会报cannot access data directory: open
+      - ./tmp/etcd/data:/bitnami/etcd # 注意这个目录容器要可写，不然会报cannot access data directory: open
     environment:
       - "ETCD_ADVERTISE_CLIENT_URLS=http://0.0.0.0:2379"
       - "ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379"
@@ -76,36 +58,37 @@ services:
     ports:
       - "2379:2379"
       - "2380:2380"
-    networks:
-      - backend
+      #networks:
+      #- backend
 
-  etcdManage:
-    image: evildecay/etcdkeeper
-    container_name: etcdManage
-    environment:
-      - TZ=Asia/Shanghai
-    ports:
-      - "8000:8080"                    # 设置容器8080端口映射指定宿主机端口，用于宿主机访问可视化web
-    depends_on: # 依赖容器
-      - etcd                                          # 在 etcd 服务容器启动后启动
-    networks:
-      - backend
+#  etcdManage:
+#    image: evildecay/etcdkeeper
+#    container_name: etcdManage
+#    environment:
+#      - TZ=Asia/Shanghai
+#    ports:
+#      - "7000:8080"                    # 设置容器8080端口映射指定宿主机端口，用于宿主机访问可视化web
+#    depends_on: # 依赖容器
+#      - etcd                                          # 在 etcd 服务容器启动后启动
+      #networks:
+      #- backend
 
-  #prometheus:
+    #prometheus:
     #image: prom/prometheus:v2.28.1
     # 下面这个备用
     #image: bitnami/prometheus
     #container_name: prometheus
     #environment:
-   #   - TZ=${TZ}
-   # privileged: true
-   # volumes:
-   #   - ./prometheus/prometheus.yml:/opt/bitnami/prometheus/conf/prometheus.yml  # 将 prometheus 配置文件挂载到容器里
-   # ports:
-   #   # Prometheus 服务映射宿主机端口号，可在宿主机127.0.0.1:3000访问
-   #   - "3000:9090"                     # 设置容器9090端口映射指定宿主机端口，用于宿主机访问可视化web
-   # networks:
-   #   - backend
+    #   - TZ=${TZ}
+    # privileged: true
+    # volumes:
+    #   - ./prometheus/prometheus.yml:/opt/bitnami/prometheus/conf/prometheus.yml  # 将 prometheus 配置文件挂载到容器里
+    # ports:
+    #   # Prometheus 服务映射宿主机端口号，可在宿主机127.0.0.1:3000访问
+    #   - "3000:9090"                     # 设置容器9090端口映射指定宿主机端口，用于宿主机访问可视化web
+    # networks:
+    #   - backend
+    # restart: always
 
   #rafana:
   # image: grafana/grafana:8.0.6
@@ -116,6 +99,7 @@ services:
   #   - "4000:3000"       # 设置容器3000端口映射指定宿主机端口，127.0.0.1:4000访问
   # networks:
   #   - backend
+  # restart: always
 
   #jaeger:
   #  image: jaeger/all-in-one:latest
@@ -126,12 +110,13 @@ services:
   #    - "5000:16686"      # 设置容器16686端口映射指定宿主机端口，可在宿主机127.0.0.1:5000访问
   #  networks:
   #    - backend
+  #  restart: always
 
-#分布式事务解决方案DTM
+  #分布式事务解决方案DTM
 #  dtm:
 #    image: yedf/dtm
 #    environment:
-#      - TZ=${TZ}
+#      - TZ=Asia/Shanghai
 #    entrypoint:
 #      - "/app/dtm/dtm"
 #      - "-c=/app/dtm/configs/config.yaml"
@@ -141,5 +126,6 @@ services:
 #    ports:
 #      - "36789:36789"  # DTM HTTP 协议端口号
 #      - "36790:36790"  # DTM gRPC 协议端口号
-#    #networks:
+#      #networks:
 #      #- backend
+#    restart: always
