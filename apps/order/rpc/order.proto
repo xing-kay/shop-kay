@@ -22,21 +22,21 @@ message OrdersRequest {
 }
 
 message OrdersResponse {
-  repeated OrderItem orders = 1;
+  repeated Orderitem orders = 1;
   bool is_end = 2;
   string create_time = 3;
 }
 
-message OrderItem {
+message Orderitem {
   int64 id = 1;
-  string order_id = 2;
+  string orderid = 2;
   int64 userid = 3;
-  int64 product_id = 4;
-  string product_name = 5;
-  string product_image = 6;
-  double current_unit_price = 7;
+  int64 proid = 4;
+  string proname = 5;
+  string proimage = 6;
+  double currentunitprice = 7;
   int64 quantity = 8;
-  double total_price = 9;
+  double totalprice = 9;
   int64 createTime = 10;
   int64 updateTime = 11;
 }
@@ -58,9 +58,9 @@ message CreateOrderResponse {
 message Orders {
   string id = 1;
   int64 userid = 2;
-  int64 shopping_id = 3;
+  int64 shoppingid = 3;
   double payment = 4;
-  int64 payment_type = 5;
+  int64 paymenttype = 5;
   int64 postage = 6;
   int64 status = 7;
   int64 createTime = 8;
@@ -69,7 +69,7 @@ message Orders {
 
 message AddOrderReq {
   int64 userid = 1;
-  int64 product_id = 2;
+  int64 productid = 2;
   int64 quantity = 3;
   int64 postage = 4;
   int64 receiveAddressId = 5;

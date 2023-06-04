@@ -2,9 +2,10 @@ package logic
 
 import (
 	"context"
+	"fmt"
 
-	"shop-kay/apps/order/rpc/internal/svc"
-	"shop-kay/apps/order/rpc/order"
+	"github.com/zhoushuguang/lebron/apps/order/rpc/internal/svc"
+	"github.com/zhoushuguang/lebron/apps/order/rpc/order"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -24,7 +25,6 @@ func NewCreateOrderCheckLogic(ctx context.Context, svcCtx *svc.ServiceContext) *
 }
 
 func (l *CreateOrderCheckLogic) CreateOrderCheck(in *order.CreateOrderRequest) (*order.CreateOrderResponse, error) {
-	// todo: add your logic here and delete this line
-
+	fmt.Printf("CreateOrderCheck in:%v\n", in)
 	return &order.CreateOrderResponse{}, nil
 }
