@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/zhoushuguang/lebron/apps/product/rpc/internal/model"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/product"
+	"shop-kay/apps/product/rpc/internal/model"
+	"shop-kay/apps/product/rpc/internal/svc"
+	"shop-kay/apps/product/rpc/product"
 
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/mr"

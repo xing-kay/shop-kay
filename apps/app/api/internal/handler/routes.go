@@ -4,9 +4,9 @@ package handler
 import (
 	"net/http"
 
-	order "github.com/zhoushuguang/lebron/apps/app/api/internal/handler/order"
-	user "github.com/zhoushuguang/lebron/apps/app/api/internal/handler/user"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/svc"
+	order "shop-kay/apps/app/api/internal/handler/order"
+	user "shop-kay/apps/app/api/internal/handler/user"
+	"shop-kay/apps/app/api/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
 )

@@ -5,11 +5,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/types"
-	"github.com/zhoushuguang/lebron/apps/order/rpc/order"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/product"
-	"github.com/zhoushuguang/lebron/pkg/otel"
+	"shop-kay/apps/app/api/internal/svc"
+	"shop-kay/apps/app/api/internal/types"
+	"shop-kay/apps/order/rpc/order"
+	"shop-kay/apps/product/rpc/product"
+	"shop-kay/pkg/otel"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

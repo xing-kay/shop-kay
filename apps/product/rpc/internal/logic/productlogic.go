@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/zhoushuguang/lebron/apps/product/rpc/internal/model"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/product"
+	"shop-kay/apps/product/rpc/internal/model"
+	"shop-kay/apps/product/rpc/internal/svc"
+	"shop-kay/apps/product/rpc/product"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

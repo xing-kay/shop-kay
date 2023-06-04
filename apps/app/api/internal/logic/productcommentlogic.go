@@ -3,8 +3,8 @@ package logic
 import (
 	"context"
 
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/types"
+	"shop-kay/apps/app/api/internal/svc"
+	"shop-kay/apps/app/api/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

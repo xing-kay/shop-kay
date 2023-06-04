@@ -7,9 +7,9 @@ import (
 	"log"
 	"sync"
 
-	"github.com/zhoushuguang/lebron/apps/order/rpc/order"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/product"
-	"github.com/zhoushuguang/lebron/apps/seckill/rmq/internal/config"
+	"shop-kay/apps/order/rpc/order"
+	"shop-kay/apps/product/rpc/product"
+	"shop-kay/apps/seckill/rmq/internal/config"
 
 	_ "github.com/dtm-labs/driver-gozero"
 	"github.com/dtm-labs/dtmcli/logger"

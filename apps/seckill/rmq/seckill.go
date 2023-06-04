@@ -4,11 +4,11 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/zhoushuguang/lebron/apps/seckill/rmq/internal/service"
+	"shop-kay/apps/seckill/rmq/internal/service"
 
 	"github.com/zeromicro/go-queue/kq"
 	"github.com/zeromicro/go-zero/core/conf"
-	"github.com/zhoushuguang/lebron/apps/seckill/rmq/internal/config"
+	"shop-kay/apps/seckill/rmq/internal/config"
 )
 
 var configFile = flag.String("f", "etc/seckill.yaml", "the etc file")

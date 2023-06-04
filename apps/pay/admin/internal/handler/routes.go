@@ -4,7 +4,7 @@ package handler
 import (
 	"net/http"
 
-	"github.com/zhoushuguang/lebron/apps/pay/admin/internal/svc"
+	"shop-kay/apps/pay/admin/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
 )

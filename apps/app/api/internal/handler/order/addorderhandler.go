@@ -4,10 +4,10 @@ import (
 	"net/http"
 
 	"github.com/zeromicro/go-zero/rest/httpx"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/logic/order"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/types"
-	"github.com/zhoushuguang/lebron/pkg/result"
+	"shop-kay/apps/app/api/internal/logic/order"
+	"shop-kay/apps/app/api/internal/svc"
+	"shop-kay/apps/app/api/internal/types"
+	"shop-kay/pkg/result"
 )
 
 func AddOrderHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {

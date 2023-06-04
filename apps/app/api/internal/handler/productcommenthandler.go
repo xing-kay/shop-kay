@@ -4,9 +4,9 @@ import (
 	"net/http"
 
 	"github.com/zeromicro/go-zero/rest/httpx"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/logic"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/types"
+	"shop-kay/apps/app/api/internal/logic"
+	"shop-kay/apps/app/api/internal/svc"
+	"shop-kay/apps/app/api/internal/types"
 )
 
 func ProductCommentHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {

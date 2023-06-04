@@ -4,8 +4,8 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/zhoushuguang/lebron/apps/product/admin/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/product/admin/internal/types"
+	"shop-kay/apps/product/admin/internal/svc"
+	"shop-kay/apps/product/admin/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

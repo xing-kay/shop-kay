@@ -7,8 +7,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/zhoushuguang/lebron/apps/order/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/order/rpc/order"
+	"shop-kay/apps/order/rpc/internal/svc"
+	"shop-kay/apps/order/rpc/order"
 
 	"github.com/zeromicro/go-zero/core/logx"
 	"google.golang.org/grpc/codes"

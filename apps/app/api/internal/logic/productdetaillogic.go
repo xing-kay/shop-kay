@@ -4,10 +4,10 @@ import (
 	"context"
 
 	"github.com/zeromicro/go-zero/core/mr"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/types"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/product"
-	"github.com/zhoushuguang/lebron/apps/reply/rpc/reply"
+	"shop-kay/apps/app/api/internal/svc"
+	"shop-kay/apps/app/api/internal/types"
+	"shop-kay/apps/product/rpc/product"
+	"shop-kay/apps/reply/rpc/reply"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

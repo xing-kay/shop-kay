@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/aliyun/aliyun-oss-go-sdk/oss"
-	"github.com/zhoushuguang/lebron/apps/product/admin/internal/config"
+	"shop-kay/apps/product/admin/internal/config"
 )
 
 type ServiceContext struct {

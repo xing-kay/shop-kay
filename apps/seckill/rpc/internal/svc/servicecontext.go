@@ -1,8 +1,8 @@
 package svc
 
 import (
-	"github.com/zhoushuguang/lebron/apps/product/rpc/product"
-	"github.com/zhoushuguang/lebron/apps/seckill/rpc/internal/config"
+	"shop-kay/apps/product/rpc/product"
+	"shop-kay/apps/seckill/rpc/internal/config"
 
 	"github.com/zeromicro/go-queue/kq"
 	"github.com/zeromicro/go-zero/core/stores/redis"

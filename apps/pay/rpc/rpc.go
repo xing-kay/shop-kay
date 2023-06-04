@@ -4,10 +4,10 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/zhoushuguang/lebron/apps/pay/rpc/internal/config"
-	"github.com/zhoushuguang/lebron/apps/pay/rpc/internal/server"
-	"github.com/zhoushuguang/lebron/apps/pay/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/pay/rpc/rpc"
+	"shop-kay/apps/pay/rpc/internal/config"
+	"shop-kay/apps/pay/rpc/internal/server"
+	"shop-kay/apps/pay/rpc/internal/svc"
+	"shop-kay/apps/pay/rpc/rpc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/service"

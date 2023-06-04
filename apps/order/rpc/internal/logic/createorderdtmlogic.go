@@ -9,14 +9,14 @@ import (
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/mr"
 	"github.com/zeromicro/go-zero/core/stores/sqlx"
-	"github.com/zhoushuguang/lebron/apps/order/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/order/rpc/model"
-	"github.com/zhoushuguang/lebron/apps/order/rpc/order"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/product"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/user"
-	"github.com/zhoushuguang/lebron/pkg/snowflake"
-	"github.com/zhoushuguang/lebron/pkg/xerr"
 	"google.golang.org/grpc/status"
+	"shop-kay/apps/order/rpc/internal/svc"
+	"shop-kay/apps/order/rpc/model"
+	"shop-kay/apps/order/rpc/order"
+	"shop-kay/apps/product/rpc/product"
+	"shop-kay/apps/user/rpc/user"
+	"shop-kay/pkg/snowflake"
+	"shop-kay/pkg/xerr"
 )
 
 type CreateOrderDTMLogic struct {

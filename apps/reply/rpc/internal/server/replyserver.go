@@ -6,9 +6,9 @@ package server
 import (
 	"context"
 
-	"github.com/zhoushuguang/lebron/apps/reply/rpc/internal/logic"
-	"github.com/zhoushuguang/lebron/apps/reply/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/reply/rpc/reply"
+	"shop-kay/apps/reply/rpc/internal/logic"
+	"shop-kay/apps/reply/rpc/internal/svc"
+	"shop-kay/apps/reply/rpc/reply"
 )
 
 type ReplyServer struct {

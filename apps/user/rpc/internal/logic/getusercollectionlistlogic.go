@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/model"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/user"
-	"github.com/zhoushuguang/lebron/pkg/xerr"
+	"shop-kay/apps/user/rpc/internal/svc"
+	"shop-kay/apps/user/rpc/model"
+	"shop-kay/apps/user/rpc/user"
+	"shop-kay/pkg/xerr"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -26,7 +26,7 @@ func NewGetUserCollectionListLogic(ctx context.Context, svcCtx *svc.ServiceConte
 	}
 }
 
-//  收藏列表
+// 收藏列表
 func (l *GetUserCollectionListLogic) GetUserCollectionList(in *user.UserCollectionListReq) (*user.UserCollectionListRes, error) {
 	collectionList, err := l.svcCtx.UserCollectionModel.FindAllByUid(l.ctx, in.Uid)
 	fmt.Println("==============collectionList", collectionList)

@@ -3,10 +3,10 @@ package logic
 import (
 	"context"
 	"github.com/pkg/errors"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/model"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/user"
-	"github.com/zhoushuguang/lebron/pkg/xerr"
+	"shop-kay/apps/user/rpc/internal/svc"
+	"shop-kay/apps/user/rpc/model"
+	"shop-kay/apps/user/rpc/user"
+	"shop-kay/pkg/xerr"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -25,7 +25,7 @@ func NewDelUserCollectionLogic(ctx context.Context, svcCtx *svc.ServiceContext) 
 	}
 }
 
-//  删除收藏
+// 删除收藏
 func (l *DelUserCollectionLogic) DelUserCollection(in *user.UserCollectionDelReq) (*user.UserCollectionDelRes, error) {
 	_, err := l.svcCtx.UserCollectionModel.FindOne(l.ctx, in.Id)
 	if err != nil {

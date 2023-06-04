@@ -6,9 +6,9 @@ package server
 import (
 	"context"
 
-	"github.com/zhoushuguang/lebron/apps/pay/rpc/internal/logic"
-	"github.com/zhoushuguang/lebron/apps/pay/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/pay/rpc/rpc"
+	"shop-kay/apps/pay/rpc/internal/logic"
+	"shop-kay/apps/pay/rpc/internal/svc"
+	"shop-kay/apps/pay/rpc/rpc"
 )
 
 type RpcServer struct {

@@ -4,10 +4,10 @@ import (
 	"context"
 
 	"github.com/pkg/errors"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/model"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/user"
-	"github.com/zhoushuguang/lebron/pkg/xerr"
+	"shop-kay/apps/user/rpc/internal/svc"
+	"shop-kay/apps/user/rpc/model"
+	"shop-kay/apps/user/rpc/user"
+	"shop-kay/pkg/xerr"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -26,7 +26,7 @@ func NewAddUserCollectionLogic(ctx context.Context, svcCtx *svc.ServiceContext) 
 	}
 }
 
-//  添加收藏
+// 添加收藏
 func (l *AddUserCollectionLogic) AddUserCollection(in *user.UserCollectionAddReq) (*user.UserCollectionAddRes, error) {
 	dbCollection := new(model.UserCollection)
 	dbCollection.Uid = in.Uid

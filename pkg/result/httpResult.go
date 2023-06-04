@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/zhoushuguang/lebron/pkg/xerr"
+	"shop-kay/pkg/xerr"
 
 	"github.com/pkg/errors"
 	"github.com/zeromicro/go-zero/core/logx"
@@ -12,7 +12,7 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-//http response
+// http response
 func HttpResult(r *http.Request, w http.ResponseWriter, resp interface{}, err error) {
 	if err == nil {
 		//return success
@@ -45,7 +45,7 @@ func HttpResult(r *http.Request, w http.ResponseWriter, resp interface{}, err er
 	}
 }
 
-//http auth error
+// http auth error
 func AuthHttpResult(r *http.Request, w http.ResponseWriter, resp interface{}, err error) {
 	if err == nil {
 		//return success
@@ -76,7 +76,7 @@ func AuthHttpResult(r *http.Request, w http.ResponseWriter, resp interface{}, er
 	}
 }
 
-//http param error
+// http param error
 func ParamErrorResult(r *http.Request, w http.ResponseWriter, err error) {
 	errMsg := fmt.Sprintf("%s ,%s", xerr.MapErrMsg(xerr.ReuqestParamError), err.Error())
 	httpx.WriteJson(w, http.StatusBadRequest, Error(xerr.ReuqestParamError, errMsg))

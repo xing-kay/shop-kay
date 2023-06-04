@@ -4,10 +4,10 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/zhoushuguang/lebron/apps/seckill/rpc/internal/config"
-	"github.com/zhoushuguang/lebron/apps/seckill/rpc/internal/server"
-	"github.com/zhoushuguang/lebron/apps/seckill/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/seckill/rpc/seckill"
+	"shop-kay/apps/seckill/rpc/internal/config"
+	"shop-kay/apps/seckill/rpc/internal/server"
+	"shop-kay/apps/seckill/rpc/internal/svc"
+	"shop-kay/apps/seckill/rpc/seckill"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/service"

@@ -4,10 +4,10 @@ import (
 	"github.com/zeromicro/go-zero/core/stores/sqlx"
 	"github.com/zeromicro/go-zero/zrpc"
 
-	"github.com/zhoushuguang/lebron/apps/order/rpc/internal/config"
-	"github.com/zhoushuguang/lebron/apps/order/rpc/model"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/product"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/user"
+	"shop-kay/apps/order/rpc/internal/config"
+	"shop-kay/apps/order/rpc/model"
+	"shop-kay/apps/product/rpc/product"
+	"shop-kay/apps/user/rpc/user"
 )
 
 type ServiceContext struct {

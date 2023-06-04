@@ -1,11 +1,11 @@
 package svc
 
 import (
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/config"
-	"github.com/zhoushuguang/lebron/apps/order/rpc/order"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/product"
-	"github.com/zhoushuguang/lebron/apps/reply/rpc/reply"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/user"
+	"shop-kay/apps/app/api/internal/config"
+	"shop-kay/apps/order/rpc/order"
+	"shop-kay/apps/product/rpc/product"
+	"shop-kay/apps/reply/rpc/reply"
+	"shop-kay/apps/user/rpc/user"
 
 	"github.com/zeromicro/go-zero/zrpc"
 )

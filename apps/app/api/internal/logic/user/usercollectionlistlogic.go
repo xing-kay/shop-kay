@@ -5,10 +5,10 @@ import (
 	"encoding/json"
 
 	"github.com/pkg/errors"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/types"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/user"
-	"github.com/zhoushuguang/lebron/pkg/xerr"
+	"shop-kay/apps/app/api/internal/svc"
+	"shop-kay/apps/app/api/internal/types"
+	"shop-kay/apps/user/rpc/user"
+	"shop-kay/pkg/xerr"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

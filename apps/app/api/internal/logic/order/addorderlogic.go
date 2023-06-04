@@ -5,11 +5,11 @@ import (
 	"encoding/json"
 
 	"github.com/dtm-labs/dtmgrpc"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/types"
-	"github.com/zhoushuguang/lebron/apps/order/rpc/order"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/product"
 	"google.golang.org/grpc/status"
+	"shop-kay/apps/app/api/internal/svc"
+	"shop-kay/apps/app/api/internal/types"
+	"shop-kay/apps/order/rpc/order"
+	"shop-kay/apps/product/rpc/product"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

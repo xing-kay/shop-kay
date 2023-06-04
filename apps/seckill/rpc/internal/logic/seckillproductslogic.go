@@ -3,8 +3,8 @@ package logic
 import (
 	"context"
 
-	"github.com/zhoushuguang/lebron/apps/seckill/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/seckill/rpc/seckill"
+	"shop-kay/apps/seckill/rpc/internal/svc"
+	"shop-kay/apps/seckill/rpc/seckill"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

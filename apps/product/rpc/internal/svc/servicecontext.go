@@ -3,9 +3,9 @@ package svc
 import (
 	"time"
 
-	"github.com/zhoushuguang/lebron/apps/product/rpc/internal/config"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/internal/model"
-	"github.com/zhoushuguang/lebron/pkg/orm"
+	"shop-kay/apps/product/rpc/internal/config"
+	"shop-kay/apps/product/rpc/internal/model"
+	"shop-kay/pkg/orm"
 
 	"github.com/jinzhu/gorm"
 	"github.com/zeromicro/go-zero/core/collection"

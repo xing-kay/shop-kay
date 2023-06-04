@@ -6,9 +6,9 @@ package server
 import (
 	"context"
 
-	"github.com/zhoushuguang/lebron/apps/product/rpc/internal/logic"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/product"
+	"shop-kay/apps/product/rpc/internal/logic"
+	"shop-kay/apps/product/rpc/internal/svc"
+	"shop-kay/apps/product/rpc/product"
 )
 
 type ProductServer struct {

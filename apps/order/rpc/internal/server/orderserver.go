@@ -6,9 +6,9 @@ package server
 import (
 	"context"
 
-	"github.com/zhoushuguang/lebron/apps/order/rpc/internal/logic"
-	"github.com/zhoushuguang/lebron/apps/order/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/order/rpc/order"
+	"shop-kay/apps/order/rpc/internal/logic"
+	"shop-kay/apps/order/rpc/internal/svc"
+	"shop-kay/apps/order/rpc/order"
 )
 
 type OrderServer struct {

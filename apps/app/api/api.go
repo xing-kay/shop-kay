@@ -4,9 +4,9 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/config"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/handler"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/svc"
+	"shop-kay/apps/app/api/internal/config"
+	"shop-kay/apps/app/api/internal/handler"
+	"shop-kay/apps/app/api/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/logx"

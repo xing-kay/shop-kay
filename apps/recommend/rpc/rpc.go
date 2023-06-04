@@ -4,10 +4,10 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/zhoushuguang/lebron/apps/recommend/rpc/internal/config"
-	"github.com/zhoushuguang/lebron/apps/recommend/rpc/internal/server"
-	"github.com/zhoushuguang/lebron/apps/recommend/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/recommend/rpc/rpc"
+	"shop-kay/apps/recommend/rpc/internal/config"
+	"shop-kay/apps/recommend/rpc/internal/server"
+	"shop-kay/apps/recommend/rpc/internal/svc"
+	"shop-kay/apps/recommend/rpc/rpc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/service"

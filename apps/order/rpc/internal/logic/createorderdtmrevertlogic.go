@@ -7,10 +7,10 @@ import (
 
 	"github.com/dtm-labs/dtmgrpc"
 	"github.com/zeromicro/go-zero/core/stores/sqlx"
-	"github.com/zhoushuguang/lebron/apps/order/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/order/rpc/order"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/user"
 	"google.golang.org/grpc/status"
+	"shop-kay/apps/order/rpc/internal/svc"
+	"shop-kay/apps/order/rpc/order"
+	"shop-kay/apps/user/rpc/user"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

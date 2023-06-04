@@ -4,9 +4,9 @@ import (
 	"net/http"
 
 	"github.com/zeromicro/go-zero/rest/httpx"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/logic/user"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/app/api/internal/types"
+	"shop-kay/apps/app/api/internal/logic/user"
+	"shop-kay/apps/app/api/internal/svc"
+	"shop-kay/apps/app/api/internal/types"
 )
 
 func UserCollectionDelHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {

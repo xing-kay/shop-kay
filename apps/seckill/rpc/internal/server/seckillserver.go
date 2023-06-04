@@ -6,9 +6,9 @@ package server
 import (
 	"context"
 
-	"github.com/zhoushuguang/lebron/apps/seckill/rpc/internal/logic"
-	"github.com/zhoushuguang/lebron/apps/seckill/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/seckill/rpc/seckill"
+	"shop-kay/apps/seckill/rpc/internal/logic"
+	"shop-kay/apps/seckill/rpc/internal/svc"
+	"shop-kay/apps/seckill/rpc/seckill"
 )
 
 type SeckillServer struct {

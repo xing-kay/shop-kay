@@ -5,10 +5,10 @@ import (
 	"fmt"
 
 	"github.com/zeromicro/go-zero/core/logx"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/internal/config"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/internal/server"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/product/rpc/product"
+	"shop-kay/apps/product/rpc/internal/config"
+	"shop-kay/apps/product/rpc/internal/server"
+	"shop-kay/apps/product/rpc/internal/svc"
+	"shop-kay/apps/product/rpc/product"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/service"

@@ -6,9 +6,9 @@ package server
 import (
 	"context"
 
-	"github.com/zhoushuguang/lebron/apps/user/rpc/internal/logic"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/internal/svc"
-	"github.com/zhoushuguang/lebron/apps/user/rpc/user"
+	"shop-kay/apps/user/rpc/internal/logic"
+	"shop-kay/apps/user/rpc/internal/svc"
+	"shop-kay/apps/user/rpc/user"
 )
 
 type UserServer struct {
