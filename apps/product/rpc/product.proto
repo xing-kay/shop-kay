@@ -21,7 +21,7 @@ message ProductItemRequest {
 }
 
 message ProductRequest {
-  string product_ids = 1;
+  repeated int64 product_ids = 1;
 }
 
 message ProductResponse {

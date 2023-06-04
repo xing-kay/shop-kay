@@ -40,38 +40,25 @@ services:
   #    - "15672:15672"
 
   etcd:
+    image: bitnami/etcd
     container_name: etcd
-    hostname: etcd
-    image: bitnami/etcd:latest
-    privileged: true
-    volumes:
-      - ./tmp/etcd/data:/bitnami/etcd # 注意这个目录容器要可写，不然会报cannot access data directory: open
     environment:
-      - "ETCD_ADVERTISE_CLIENT_URLS=http://0.0.0.0:2379"
-      - "ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379"
-      - "ETCD_LISTEN_PEER_URLS=http://0.0.0.0:2380"
-      - "ETCD_INITIAL_ADVERTISE_PEER_URLS=http://0.0.0.0:2380"
-      - "ALLOW_NONE_AUTHENTICATION=yes" #参数指不用密码可以连接
-      - "ETCD_INITIAL_CLUSTER=node1=http://0.0.0.0:2380"
-      - "ETCD_NAME=node1"
-      - "ETCD_DATA_DIR=/opt/bitnami/etcd/data"
-    ports:
+      - TZ=Asia/Shanghai
+      - ALLOW_NONE_AUTHENTICATION=yes
+      #- ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+      - ETCD_ADVERTISE_CLIENT_URLS=http://127.0.0.1:2379
+    ports: # 设置端口映射 Etcd 服务映射宿主机端口号，可在宿主机127.0.0.1:2379访问
       - "2379:2379"
-      - "2380:2380"
-      #networks:
-      #- backend
 
-#  etcdManage:
-#    image: evildecay/etcdkeeper
-#    container_name: etcdManage
-#    environment:
-#      - TZ=Asia/Shanghai
-#    ports:
-#      - "7000:8080"                    # 设置容器8080端口映射指定宿主机端口，用于宿主机访问可视化web
-#    depends_on: # 依赖容器
-#      - etcd                                          # 在 etcd 服务容器启动后启动
-      #networks:
-      #- backend
+  etcdManage:
+    image: evildecay/etcdkeeper
+    container_name: etcdManage
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - "8000:8080"                    # 设置容器8080端口映射指定宿主机端口，用于宿主机访问可视化web
+    depends_on: # 依赖容器
+      - etcd                                        # 在 etcd 服务容器启动后启动
 
     #prometheus:
     #image: prom/prometheus:v2.28.1

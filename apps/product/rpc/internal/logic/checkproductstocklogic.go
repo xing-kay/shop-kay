@@ -2,14 +2,13 @@ package logic
 
 import (
 	"context"
-
-	"shop-kay/apps/product/rpc/internal/svc"
-	"shop-kay/apps/product/rpc/product"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 
 	"github.com/dtm-labs/dtmcli"
 	"github.com/zeromicro/go-zero/core/logx"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
+	"shop-kay/apps/product/rpc/internal/svc"
+	"shop-kay/apps/product/rpc/product"
 )
 
 type CheckProductStockLogic struct {

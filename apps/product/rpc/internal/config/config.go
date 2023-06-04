@@ -10,5 +10,5 @@ type Config struct {
 	zrpc.RpcServerConf
 	DataSource string
 	CacheConf  cache.CacheConf
-	RedisConf  redis.RedisConf
+	BizRedis   redis.RedisConf
 }

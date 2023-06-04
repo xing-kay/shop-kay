@@ -34,6 +34,6 @@ func NewServiceContext(c config.Config) *ServiceContext {
 		CategoryModel:  model.NewCategoryModel(conn, c.CacheConf),
 		OperationModel: model.NewProductOperationModel(conn, c.CacheConf),
 		LocalCache:     localCache,
-		BizRedis:       redis.New(c.Redis.Host, redis.WithPass(c.Redis.Pass)),
+		BizRedis:       redis.New(c.BizRedis.Host, redis.WithPass(c.BizRedis.Pass)),
 	}
 }

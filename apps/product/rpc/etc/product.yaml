@@ -1,5 +1,6 @@
 Name: product.rpc
-ListenOn: 0.0.0.0:9001
+ListenOn: 127.0.0.1:9001
+Mode: dev
 
 Etcd:
   Hosts:
@@ -8,7 +9,7 @@ Etcd:
 
 DataSource: root:123456@tcp(127.0.0.1:3306)/product?parseTime=true
 
-CacheRedis:
+CacheConf:
   - Host: 127.0.0.1:6379
     Pass:
     Type: node
