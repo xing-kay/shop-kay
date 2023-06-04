@@ -1,5 +1,5 @@
-gen-order-api:
-	goctl api go -api app/order/api/*.api -dir app/order/api/  -style=goZero
+gen-app-api:
+	goctl api go -api apps/app/api/*.api -dir apps/app/api/  -style=goZero
 
 gen-order-rpc:
 	goctl rpc protoc apps/order/rpc/*.proto --go_out=apps/order/rpc/ --go-grpc_out=apps/order/rpc/  --zrpc_out=apps/order/rpc
@@ -10,12 +10,14 @@ gen-product-rpc:
 gen-product-model:
 	goctl model mysql datasource -url="root:123456@tcp(127.0.0.1:3306)/product" -table="*"  -dir="apps/product/rpc/internal/model" -c
 
-
 go-run-user-rpc:
 	go run apps/user/rpc/user.go -f apps/user/rpc/etc/user.yaml
 
 go-run-product-rpc:
 	go run apps/product/rpc/product.go -f apps/product/rpc/etc/product.yaml
+
+go-run-order-rpc:
+	go run apps/order/rpc/order.go -f apps/order/rpc/etc/order.yaml
 
 debug-product:
 	grpcurl -plaintext -d '{"product_id":1}' 127.0.0.1:9001 product.Product.Product
